@@ -56,8 +56,8 @@ nav i{
   height: 100%;
   display: block;
   margin: 0 auto;
-  background-position: center;
-  background-size: contain;
+  object-fit: cover;
+  object-position: center;
 }
 .tutorial-content{
   overflow-y: scroll;
