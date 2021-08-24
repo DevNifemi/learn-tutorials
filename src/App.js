@@ -7,17 +7,21 @@ import MobileNavBar from "./components/MobileNavBar";
 
 function App() {
   const [toggle, setToggle] = useState(true)
+  const [toggleMobileSideBar, setMobileToggle] = useState(false)
 
   return (
     <div className={`${toggle ? '' : 'active'}`}>
     
-    <MobileNavBar/>
+    <MobileNavBar 
+     onToggleMobile={() => setMobileToggle(!toggleMobileSideBar)}/>
 
     <div className={`${toggle ? 'App' : 'active'}`}>
-      <SideBar />
+      <SideBar 
+      toggleMobile={toggleMobileSideBar} />
+
       <MainContent
-      toggle={toggle}
       onToggle={()=> setToggle(!toggle)} />
+
     </div>
 
     </div>

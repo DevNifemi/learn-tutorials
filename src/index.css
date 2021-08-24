@@ -82,11 +82,12 @@ nav i{
   align-items: center !important;
 }
 .btn a{
-  background-color: cadetblue;
+  background-color: #C6C6E4;
   color: #fff;
   text-decoration: none;
   padding: .6em;
   border-radius: .5em;
+  z-index: 9999999999;
   font-size: 14px;
   transition: .5s ease-in-out;
 }
@@ -112,7 +113,9 @@ nav i{
   width: 100%;
   height: 100vh !important;
 }
-
+.active .tutorial-content{
+  height: 82vh;
+}
 
 
 /* side bar styles goes here  */
@@ -127,7 +130,7 @@ nav i{
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
 }
 .logo{
-  background: cadetblue;
+  background: #C6C6E2;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -151,7 +154,7 @@ nav i{
 }
 .accordion{
   transition: .4s ease-out;
-  border-bottom: 1px solid #00ffcc;
+  border-bottom: 1px solid #E7E8EB;
   padding: 10px;
   margin-top: 5px;
   cursor: pointer;
@@ -172,10 +175,10 @@ nav i{
 /* accordion drop down styles here  */
 .accordion-dropdown{
   padding: 1em;
-  background: chocolate;
+  background: rgb(215,216,220);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .mobile-navbar{
@@ -186,13 +189,18 @@ nav i{
 /* styles for mobile screens */
 @media screen and (max-width: 800px) {
   .App{
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: 100%;
     padding: 1em;
   }
   .main-content{
     width: 100%;
-    height: 100%;
+    height: 84vh !important;
+  }
+  .tutorial-content{
+    height: 65vh;
   }
   .main-content img{
     padding: 1em;
@@ -201,12 +209,43 @@ nav i{
   }
   .sidebar{
     display: none;
+    /* width: 0; */
+    transition: all .5s ease-in-out;
+  }
+  /* mobile side bar  */
+  .active-sidebar{
+    transition: .5s ease-out;
+    background: rgb(242,243,245);
+    display: block;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0 ;
+    z-index: 999999 !important;
+  }
+  .active-sidebar .sidebar-intro{
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+  }
+  .active-sidebar .logo{
+    display: none !important;
+  }
+  .active-sidebar .accordion-container{
+    width: 100vw;
+    height: 70vh;
+    z-index: 999999;
   }
 
   /* remove nav bar on active  */
   .active .mobile-navbar{
     display: none;
   }
+
+
 
   /* mobile nav bar styles goes here  */
   .mobile-navbar{
@@ -215,7 +254,8 @@ nav i{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: cadetblue;
+    height: 10vh;
+    background: #C6C6E2;
     overflow: hidden;
   }
   .mobile-logo{

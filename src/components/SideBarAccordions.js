@@ -20,7 +20,7 @@ const SideBarAccordions = () => {
             <div key={index} className="accordion-card">
                 <div onClick={() => toggleAccordion(index)} className="accordion">
                     <h1>{info.videoTitle}</h1>
-                    <i className={`${ dropDown === index ? 'bx bxs-caret-down-circle' : 'bx bxs-caret-up-circle'}`} style={{color: 'cadetblue'}}  ></i>
+                    <i className={`${ dropDown === index ? 'bx bxs-caret-down-circle' : 'bx bxs-caret-up-circle'}`} style={{color: '#C6C6E9'}}  ></i>
                 </div>
                 {
                     dropDown === index ? (

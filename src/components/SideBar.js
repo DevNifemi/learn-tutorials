@@ -1,8 +1,8 @@
 import SideBarAccordions from "./SideBarAccordions.js"
 
-const SideBar = () => {
+const SideBar = ({toggleMobile}) => {
     return (
-        <div className='sidebar'>
+        <div className={`sidebar ${toggleMobile ? 'active-sidebar' : ''}`}>
 
         {/* video progress bar  */}
             <div className="sidebar-intro">
