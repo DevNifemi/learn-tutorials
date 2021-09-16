@@ -114,8 +114,23 @@ nav i{
   height: 100vh !important;
 }
 
-
-
+.no_tutorial_selected{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 83vh !important;
+}
+.no_tutorial_selected h1{
+  color: rgb(128, 128, 128);
+  font-size: 2.4em;
+}
+.no_tutorial_selected p{
+  width: 60%;
+  text-align: center;
+  margin-top: 30px;
+}
 /* side bar styles goes here  */
 .sidebar{
   height: 95vh !important;
