@@ -5,7 +5,7 @@ const MobileNavBar = ({onToggleMobile}) => {
                     <img src="https://import.cdn.thinkific.com/366276/course_player_logo/1620207581889FI_FemaleInvestlogo_240x48px1.png" alt="" />
             </div>
 
-            <i onClick={onToggleMobile} class='bx bx-dialpad-alt'></i>
+            <i onClick={onToggleMobile} className='bx bx-dialpad-alt'></i>
         </div>
     )
 }

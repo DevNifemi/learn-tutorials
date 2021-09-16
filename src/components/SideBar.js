@@ -1,6 +1,6 @@
 import SideBarAccordions from "./SideBarAccordions.js"
 
-const SideBar = ({toggleMobile}) => {
+const SideBar = ({toggleMobile, titles}) => {
     return (
         <div className={`sidebar ${toggleMobile ? 'active-sidebar' : ''}`}>
 
@@ -9,11 +9,12 @@ const SideBar = ({toggleMobile}) => {
                 <div className="logo">
                     <img src="https://import.cdn.thinkific.com/366276/course_player_logo/1620207581889FI_FemaleInvestlogo_240x48px1.png" alt="" />
                 </div>
+                
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore ut, modi, tempora quisquam quasi temporibus, itaque voluptates alias sed harum autem possimus! Quae reiciendis inventore repudiandae reprehenderit laboriosam nihil delectus.</p>
             </div>
             
             {/* accordions and video list below */}
-            <SideBarAccordions/>
+            <SideBarAccordions titles={titles}/>
 
         </div>
     )

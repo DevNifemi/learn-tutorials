@@ -1,7 +1,8 @@
-import {useState} from'react'
-import { Data } from '../assets/Data'
+import {useState} from 'react'
+import { setTutorialId } from '../redux/actions'
+import store from '../redux/store'
 
-const SideBarAccordions = () => {
+const SideBarAccordions = ({titles}) => {
     const [dropDown, setDropDown] = useState(false)
 
     // toggle the accordion
@@ -12,21 +13,25 @@ const SideBarAccordions = () => {
         setDropDown(index)
     }
 
+  
+      
+
     return (
         <div className="accordion-container">
 
-            {Data.map((info, index) => (
+            {titles.map((info, index) => (
 
             <div key={index} className="accordion-card">
                 <div onClick={() => toggleAccordion(index)} className="accordion">
-                    <h1>{info.videoTitle}</h1>
+                    <h1>{info.title}</h1>
                     <i className={`${ dropDown === index ? 'bx bxs-caret-down-circle' : 'bx bxs-caret-up-circle'}`} style={{color: '#C6C6E9'}}  ></i>
                 </div>
                 {
                     dropDown === index ? (
                         <div className="accordion-dropdown">
-                            <h4>{info.videoSections}</h4>
-                        </div>) : ''
+                            <h4 onClick={handleUserClick.bind(null, info.tutorialId)}>{info.subTitle}</h4>
+                        </div>
+                        ) : ''
                 }
             </div>
 
@@ -35,5 +40,13 @@ const SideBarAccordions = () => {
         </div>
     )
 }
+
+
+  // set the tutorial to view
+  function handleUserClick(id) {
+    store.dispatch(setTutorialId(id));
+  }
+
+
 
 export default SideBarAccordions
